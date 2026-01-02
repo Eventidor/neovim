@@ -4,9 +4,21 @@ return {
     config = function()
         require('lualine').setup {
             options = {
-                theme = 'codedark',
-                component_separators="";
-                section_separators="",
+                theme = 'auto',
+                section_separators = {'', ''},
+                component_separators = {'', ''},
+                disabled_filetypes = {
+                    statusline = {},
+                    winbar = {},
+                },
+                ignore_focus = {},
+                always_divide_middle = true,
+                globalstatus = false,
+                refresh = {
+                    statusline = 1000,
+                    tabline = 1000,
+                    winbar = 1000,
+                },
                 icons_enabled = false
             }
 
