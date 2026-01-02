@@ -1,0 +1,3 @@
+[submodule "lua/pack/packer/start/lazy.nvim"]
+	path = lua/pack/packer/start/lazy.nvim
+	url = https://github.com/folke/lazy.nvim
