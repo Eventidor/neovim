@@ -1,32 +1,56 @@
-vim.opt.number = true               -- Show line numbers
-vim.opt.relativenumber = true       -- Relative line numbers
-vim.opt.ignorecase = true           -- Case insensitive searching
-vim.opt.smartcase = true            -- Smart case searching
-vim.opt.hlsearch = false           -- Don't highlight search results
-vim.opt.expandtab = true            -- Use spaces instead of tabs
-vim.opt.shiftwidth = 2              -- Set indentation width to 2 spaces
-vim.opt.tabstop = 2                 -- Set tab width to 2 spaces
-vim.opt.smartindent = true          -- Smart auto-indentation
-vim.opt.termguicolors = true       
--- Clipboard Integration
-vim.opt.clipboard = 'unnamedplus'  -- Use system clipboard
+-- Leader key (Primeagen style)
+vim.g.mapleader = " "
+vim.g.maplocalleader = " "
 
--- Enable mouse
-vim.opt.mouse = 'a'                -- Enable mouse support in all modes
+-- Line numbers
+vim.opt.nu = true
+vim.opt.relativenumber = true
 
--- Search and completion
-vim.opt.incsearch = true           -- Incremental search
-vim.opt.wildmenu = true            -- Command-line completion enhancements
-vim.opt.completeopt = 'menuone,noinsert,noselect'
+-- Tabs / indentation
+vim.opt.tabstop = 2
+vim.opt.softtabstop = 2
+vim.opt.shiftwidth = 2
+vim.opt.expandtab = true
+vim.opt.smartindent = true
 
--- Split behavior
-vim.opt.splitright = true          -- Open vertical splits to the right
-vim.opt.splitbelow = true          -- Open horizontal splits below
+-- Search
+vim.opt.hlsearch = false
+vim.opt.incsearch = true
+vim.opt.ignorecase = true
+vim.opt.smartcase = true
 
+-- UI
+vim.opt.termguicolors = true
+vim.opt.scrolloff = 8
+vim.opt.signcolumn = "yes"
 
-vim.opt.rtp:prepend(vim.fn.stdpath('config') .. '/lua')
+-- Splits
+vim.opt.splitright = true
+vim.opt.splitbelow = true
 
--- Load lazy.nvim from the custom path
+-- Clipboard
+vim.opt.clipboard = "unnamedplus"
+
+-- Mouse
+vim.opt.mouse = "a"
+
+-- Completion
+vim.opt.completeopt = "menuone,noinsert,noselect"
+vim.opt.wildmenu = true
+
+-- Performance
+vim.opt.updatetime = 50
+
+-- Disable intro screen
+vim.opt.shortmess:append("I")
+
+-- Runtime path
+vim.opt.rtp:prepend(vim.fn.stdpath("config") .. "/lua")
+
+-- lazy.nvim path
 vim.opt.runtimepath:prepend("~/.config/nvim/lua/pack/packer/start/lazy.nvim")
-
-
+vim.opt.scrolloff = 8
+vim.opt.sidescrolloff = 8
+-- disable netrw (so nvim-tree replaces it)
+vim.g.netrw_banner=0
+vim.o.fillchars="eob: "

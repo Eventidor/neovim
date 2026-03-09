@@ -1,17 +1,15 @@
--- lua/plugins/treesitter.lua
 return {
     "nvim-treesitter/nvim-treesitter",
-    run = ':TSUpdate',
+    build = ":TSUpdate", 
     config = function()
-        require("nvim-treesitter.configs").setup({
-           
-            highlight = {
-                enable = true,                 -- Enable Treesitter-based highlighting
+        require("nvim-treesitter.config").setup({
+          ensure_installed={"markdown","markdown_inline","lua","python","c","c++","java","javascript"},  
+          highlight = {
+                enable = true,
             },
             indent = {
-                enable = true,                 -- Enable Treesitter-based indentation
+                enable = true,
             },
         })
-    end
+    end,
 }
-

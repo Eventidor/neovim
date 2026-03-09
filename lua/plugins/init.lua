@@ -11,5 +11,7 @@ require("lazy").setup({
     require("plugins.android"),
     require("plugins.supermaven"),
     require("plugins.nvim-cmp"),
+    require("plugins.neoscroll"),
+    require("plugins.keyhelp"),
 })
 
