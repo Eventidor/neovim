@@ -1,6 +1,6 @@
 return {
     "folke/which-key.nvim",
-    config = function()
+    configs = function()
         -- Set up which-key with the default configuration
         require("which-key").setup({
             plugins = {

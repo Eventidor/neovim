@@ -26,5 +26,4 @@ return {
   vim.keymap.set('n','<leader>q',vim.diagnostic.setloclist),
   vim.keymap.set('n','g<leader>q',vim.diagnostic.setqflist),
   vim.keymap.set('n','gl',vim.diagnostic.open_float),
-
- }
+}

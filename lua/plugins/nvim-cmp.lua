@@ -1,6 +1,7 @@
 return {
     "neovim/nvim-lspconfig",
     dependencies = {
+        "hrsh7th/cmp-emoji",
         "stevearc/conform.nvim",
         "williamboman/mason.nvim",
         "williamboman/mason-lspconfig.nvim",
@@ -79,9 +80,15 @@ return {
                         filetypes = { "html", "css", "scss", "javascript", "javascriptreact", "typescript", "typescriptreact", "vue", "svelte", "heex" },
                     })
                 end,
-            }
+                ["clangd"] = function()
+                  local lspconfig = require("lspconfig")
+                  lspconfig.clangd.setup({
+                      capabilities = capabilities,
+                      filetypes = { "c", "cpp", "m", "mm" },
+                  })
+                end,
+              }
         })
-
         local cmp_select = { behavior = cmp.SelectBehavior.Select }
 
         cmp.setup({
@@ -97,6 +104,7 @@ return {
                 ["<C-Space>"] = cmp.mapping.complete(),
             }),
             sources = cmp.config.sources({
+                { name = "emoji" },
                 { name = "copilot", group_index = 2 },
                 { name = 'nvim_lsp' },
                 { name = 'luasnip' }, -- For luasnip users.

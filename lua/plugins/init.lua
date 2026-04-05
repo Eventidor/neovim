@@ -13,5 +13,8 @@ require("lazy").setup({
     require("plugins.nvim-cmp"),
     require("plugins.neoscroll"),
     require("plugins.keyhelp"),
-})
+    require("plugins.leap"),
+    require("plugins.icons"),
+    require("plugins.harpoon"),
+  })
 

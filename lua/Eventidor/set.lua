@@ -1,7 +1,6 @@
 -- Leader key (Primeagen style)
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
-
 -- Line numbers
 vim.opt.nu = true
 vim.opt.relativenumber = true
@@ -46,7 +45,7 @@ vim.opt.shortmess:append("I")
 
 -- Runtime path
 vim.opt.rtp:prepend(vim.fn.stdpath("config") .. "/lua")
-
+vim.opt.conceallevel = 2
 -- lazy.nvim path
 vim.opt.runtimepath:prepend("~/.config/nvim/lua/pack/packer/start/lazy.nvim")
 vim.opt.scrolloff = 8
@@ -54,3 +53,4 @@ vim.opt.sidescrolloff = 8
 -- disable netrw (so nvim-tree replaces it)
 vim.g.netrw_banner=0
 vim.o.fillchars="eob: "
+
